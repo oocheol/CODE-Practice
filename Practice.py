@@ -12,6 +12,8 @@ for x in range(1, 11) :
 
 print(a)
 
+data = dict()
+
 
 # In[ ]:
 
