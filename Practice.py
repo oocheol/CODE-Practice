@@ -14,6 +14,7 @@ print(a)
 
 data = dict()
 
+b = 3
 
 # In[ ]:
 
