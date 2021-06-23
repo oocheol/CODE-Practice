@@ -15,4 +15,4 @@ for x in range(n) :
 
 print(result)
 
-s = 2
+s = 211111333
