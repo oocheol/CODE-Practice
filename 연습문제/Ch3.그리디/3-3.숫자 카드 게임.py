@@ -14,3 +14,4 @@ for x in range(n) :
     result = max(result, min_data)
 
 print(result)
+
