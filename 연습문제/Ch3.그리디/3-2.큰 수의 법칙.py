@@ -3,8 +3,11 @@
 
 while True : 
     n, m, k = map(int, input("숫자입력(n m k), m >= k : ").split())
-    if m >= k : 
+    if n >= 2 : 
         break
+    
+        if m >= k : 
+            break
 
 data = list(map(int, input("숫자입력(n개) : ").split())) 
 
