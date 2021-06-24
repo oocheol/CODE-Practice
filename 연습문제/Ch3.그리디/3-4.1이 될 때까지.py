@@ -8,8 +8,8 @@ while True :
         if n >= 2 :
             break
 
-            if k >= 2 :
-                break
+        if k >= 2 :
+            break
 
 
     if n % k == 0 :
