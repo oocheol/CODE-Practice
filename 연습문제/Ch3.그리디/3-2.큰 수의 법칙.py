@@ -1,13 +1,8 @@
 # 그리디 실전문제 3-2
 # 큰 수의 법칙
 
-while True : 
-    n, m, k = map(int, input("숫자입력(n m k), m >= k : ").split())
-    if n >= 2 : 
-        break
-    
-        if m >= k : 
-            break
+
+n, m, k = map(int, input("숫자입력(n m k), m >= k : ").split())
 
 data = list(map(int, input("숫자입력(n개) : ").split())) 
 
