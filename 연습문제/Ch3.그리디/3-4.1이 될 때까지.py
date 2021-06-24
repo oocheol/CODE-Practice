@@ -3,23 +3,18 @@
 
 result = 0
 
-while True :
-    n, k = map(int, input("숫자입력(n k) : ").split())
-        if n >= 2 :
-            break
-
-        if k >= 2 :
-            break
+n, k = map(int, input("숫자입력(n k) : ").split())
 
 
+while !=1 :
     if n % k == 0 :
-        result += n//k
+        n += n//k
+        result += 1
+            
 
     else :
         n -= 1
         result += 1
 
-        if n % k == 0 :
-            result += n//k
 
 print(result)
