@@ -3,7 +3,6 @@
 
 n = int(input())
 x, y = 1, 1
-
 goal = input().split()
 
 # L, R, U, D 구현
