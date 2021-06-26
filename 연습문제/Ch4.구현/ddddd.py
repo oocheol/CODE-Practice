@@ -4,8 +4,4 @@ with open('C:/Users/ooche/OneDrive/바탕 화면/lotto.csv','r', encoding = 'UTF
     for line in f :
         print(line,end = '')
 
-print("hello")
-print("fix")
-print("good")
-print("nice")
 print("sync check")
