@@ -1,4 +1,4 @@
 {
-    "jupyter.jupyterServerType": "remote",
+    "jupyter.jupyterServerType": "local",
     "sync.gist": "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"
 }
