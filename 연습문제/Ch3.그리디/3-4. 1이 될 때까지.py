@@ -6,7 +6,7 @@ result = 0
 n, k = map(int, input("숫자입력(n k) : ").split())
 
 
-while !=1 : # ! = 1 : 이 되면 종료
+while ! = 1 : # ! = 1 : 이 되면 종료
     if n % k == 0 :
         n += n//k
         result += 1
