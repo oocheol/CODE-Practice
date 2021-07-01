@@ -2,6 +2,6 @@ while True :
     s = input()
 
     if s == 'END' :
-        pass
+        break
     else :
         print(''.join(reversed(s)))
