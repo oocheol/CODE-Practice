@@ -1,6 +1,7 @@
-s = input()
+while True :
+    s = input()
 
-if s == 'END' :
-    pass
-else :
-    print(''.join(reversed(s)))
+    if s == 'END' :
+        pass
+    else :
+        print(''.join(reversed(s)))
