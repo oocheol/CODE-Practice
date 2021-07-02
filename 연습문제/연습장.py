@@ -7,5 +7,5 @@ for step in steps :
     y = 1 + step[1]
     if x >= 1 and x <= 8 and y >= 1 and y <= 8 :
         result +=1
-print(x,y)
+    print(x,y)
 print(result)
