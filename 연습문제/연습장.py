@@ -1,11 +1,11 @@
-import numpy as np
-import random
+steps = [(-2, -1),(-1, -2),(1, -2),(2, -1),(2, 1),(1, 2),(-1, 2),(-2, 1)]
 
+result = 0 
 
-a = np.array([[1,0],[0,1]])
-
-print(a)
-
-np.random.seed(10)
-b =np.random.randint(1,10,size = (1,11,4))
-print(b)
+for step in steps :
+    x = 1 + step[0]
+    y = 1 + step[1]
+    if x >= 1 and x <= 8 and y >= 1 and y <= 8 :
+        result +=1
+print(x,y)
+print(result)
