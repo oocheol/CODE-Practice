@@ -1,35 +1,35 @@
-# 5-1(len, array 안쓰고)
+# 5-1(append, pop만)
 
 stack = []
-
-def len1(x) : 
-    count = 0
-    for _ in x:
-        count += 1
-    return count
+a = 0
+count = 0
 
 def process_stack(command) :
     
+    
     if command[0] == "push" :
+        global count
         stack.append(command[1])
+        count += 1
 
     elif command[0] == "pop" :
-        if len1(stack) >= 1 :
-            print(stack.pop()) 
+        if count >= 1 :
+            print(stack.pop())
+            count -= 1
         else :
             print(-1)
 
     elif command[0] == "size" :
-        print(len1(stack))
+        print(count)
 
     elif command[0] == "empty" :
-        if len1(stack) == 0 :
+        if count == 0 :
             print(1)
         else :
             print(0)
 
     elif command[0] == "top" :
-        if len1(stack) >= 1 :
+        if count >= 1 :
             print(stack[-1]) 
         else :
             print(-1)
