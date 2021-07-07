@@ -1,4 +1,4 @@
-# 5, len, array 안쓰고
+# 5-1(len, array 안쓰고)
 
 stack = []
 
