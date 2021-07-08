@@ -1,15 +1,15 @@
-import sys
-# 공사장 좌표(a, b, R)
-a, b, r= map(int, input().split())
-n = int(input())
-arr = []
-for _ in range(n):
-    arr.append(list(map(int, input().split())))
-def showNoisy(arr):
-    for cord in arr:
-        x, y = cord
-        if (((x - a)**2 + (y - b)**2) - r**2) < sys.float_info.epsilon:
-            print('Nosiy')
-        else:
-            print('Silent')
-showNoisy(arr)
+# 한번씩 출력하기
+
+a, b, R = map(int,input("a, b, N : ").split())
+
+N = int(input("N : "))
+
+for _ in range(N) :
+    x,y = map(int,input("x, y : ").split())
+
+    if ((x-a)**2) + ((y-b)**2) >= R**2 :
+        print("silent")
+
+    else :
+        print("noisy")
+
