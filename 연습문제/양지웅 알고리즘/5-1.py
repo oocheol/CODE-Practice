@@ -1,12 +1,10 @@
 # 5-1(append, pop만)
 
 stack = []
-a = 0
 count = 0
 
 def process_stack(command) :
-    
-    
+
     if command[0] == "push" :
         global count
         stack.append(command[1])
