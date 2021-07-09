@@ -1,8 +1,6 @@
-def empty(arr):
-    if arr:
-        return 0
-    return 1
-    
+## 연습
 
-x = []
-empty(x)
+x = list(map(int, input().split()))
+
+x.sort(reverse=True)
+print(x[0],x[-1])
