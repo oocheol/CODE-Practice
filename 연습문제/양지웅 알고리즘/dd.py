@@ -1,3 +1,4 @@
-x = []
-if x.pop() == False :
-    print(1)
+def x(*args,**kwargs) :
+    print(args)
+
+x("testing", "optional", test="arguments", name = "value")

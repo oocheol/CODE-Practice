@@ -1,6 +1,7 @@
-## 연습
+x_1 = 3
+x_2 = 5
+x_3 = 7
+x_4 = 9
 
-x = list(map(int, input().split()))
-
-x.sort(reverse=True)
-print(x[0],x[-1])
+for i in range(1,5) :
+  print(f'x_{i}')
