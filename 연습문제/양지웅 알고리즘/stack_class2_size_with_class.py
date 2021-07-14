@@ -2,10 +2,15 @@ class Stack:
     def __init__(self):
         self.stack = []
         self.stack_size = 0
-    
+
+        # self.stack = [None] * n
+        
     def push(self, num):
-        self.stack.append(int(num))
+        self.stack.append(int(num)) 
+        # self.stack += [int(num)]의 경우 시간복잡도가 올라갈 수 있음!!(사용 지양)
+        
         self.stack_size += 1
+        
     
     def pop(self):
         if self.size() > 0:
