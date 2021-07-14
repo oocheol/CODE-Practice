@@ -1,7 +1,4 @@
 # 6-1 class
-
-que = []
-
 class Que :
     def __init__(self) :
          self.que = []
