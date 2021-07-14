@@ -2,8 +2,7 @@
 
 que = []
 
-class run :
- def process_que(x) :
+def process_que(x) :
     if x[0] == "push" :
         que.append(x[1])
 
