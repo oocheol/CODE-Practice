@@ -50,7 +50,7 @@ def run_cmd_with_que(cmd, stack_lst):
     
     return que_lst
 
-que_lst = que()
+que_lst = Que()
 # stack_lst.stack
 # stack_lst.stack_size
 
