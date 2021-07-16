@@ -14,8 +14,7 @@ class Que :
             self.a.append(self.que[0])
             del self.que[0]
             self.que_size -= 1
-            return self.a[0]
-             
+            return self.a[0]             
                        
         else :  
             return -1
