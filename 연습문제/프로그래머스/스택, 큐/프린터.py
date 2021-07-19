@@ -1,18 +1,23 @@
-import math
+## 스택 / 큐   : 프린터
 
-def solution(progresses, speeds):
-    a = []
-    res = []
-    for i in range(len(progresses)) :
-        b = math.ceil((100 - progresses[i]) / speeds[i])
-        a.append(int(b))
+a1 = [2, 1, 3, 2]
+a2 = [1, 1, 9, 1, 1, 1]
+
+def solution(pr, loc):
     
-    print(a[0]>a[1])
+    c = pr[loc]
+    for i in range(len(pr)) :
+        for z in range(1,len(pr)-1) :
+            if pr[i] < pr[z] :
+                pr.insert(-1,pr[i])
+                pr.remove(pr[i])
+            else :
+                
+            
+    print(pr)
 
-prog1 = [93, 30, 55]
-spd1 = [1, 30, 5]
-prog2 = [95, 90, 99, 99, 80, 99]
-spd2 = [1, 1, 1, 1, 1, 1]
+            
+    
 
-solution(prog1, spd1)
-solution(prog2, spd2)
+solution(a1,2)
+solution(a2,0)
