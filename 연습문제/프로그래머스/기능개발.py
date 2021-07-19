@@ -1,30 +1,25 @@
-# import math
+import math
 
-# def solution(progresses, speeds):
-#     a = []
-#     res = []
-#     n = 0
-    
-#     for i in range(len(progresses)) :
-#         b = math.ceil((100 - progresses[i]) / speeds[i])
-#         a.append(b)
-    
-#     while n+1 < len(a) :
-#             if a[n] < a[n+1] :
-#                 res.append(len(a[:n]))
-#                 n += 1
-            
-#             else :
-#                 n += 1
-        
-#     print(a)    
-#     print(res)
+def solution(progresses, speeds):
 
+    a = math.ceil((100-progresses[0])/speeds[0])
 
-# prog1 = [93, 30, 55]
-# spd1 = [1, 30, 5]
-# prog2 = [95, 90, 99, 99, 80, 99]
-# spd2 = [1, 1, 1, 1, 1, 1]
+    answer = [0]
 
-# solution(prog1, spd1)
-# solution(prog2, spd2)
+    for i,j in zip(progresses,speeds):
+        b = math.ceil((100-i)/j)
+        if(a >= b):
+            answer.append(answer.pop()+1)
+        if(a < b):
+            a=math.ceil((100-i)/j)
+            answer.append(1)
+
+    return answer   
+
+prog1 = [93, 30, 55]
+spd1 = [1, 30, 5]
+prog2 = [95, 90, 99, 99, 80, 99]
+spd2 = [1, 1, 1, 1, 1, 1]
+
+print(solution(prog1, spd1))
+print(solution(prog2, spd2))
