@@ -17,7 +17,7 @@ def solution(input_id):
     temp_id = []
     # 1,2 단계
     for s in input_id :
-        if s.isalnum() :
+        if s.isalnum() :  # 알파벳 & 숫자판별
             temp_id.append(s.lower())
         elif s == '-' or s == '_' or s == '.':
             temp_id.append(s.lower())
