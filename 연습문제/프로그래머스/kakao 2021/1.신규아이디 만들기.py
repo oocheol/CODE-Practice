@@ -24,7 +24,7 @@ def solution(input_id):
     new_id = ''.join(temp_id)
     
     # 3단계
-    for x in range(len(temp_id)+1,0,-1) :
+    for x in range(len(temp_id)+1,0,-1) : # range 거꾸로
         new_id = new_id.replace("."*x,".")
     
     # 4단계
