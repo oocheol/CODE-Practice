@@ -1,26 +1,28 @@
 def insertion_sort(x):
     for i in range(len(x)):
+        for j in range(i,0,-1):
+            if x[j] < x[j-1] :
+                x[j] , x[j-1] = x[j-1], x[j]
         
-    
     return x
 
 
-# def selection_sort(x):
-#     res = []
+def selection_sort(x):
+    res = []
     
-#     for _ in range(len(x)):
-#         a = x.index(min(x))
-#         res.append(x.pop(x))
+    for _ in range(len(x)):
+        a = x.index(min(x))
+        res.append(x.pop(x))
         
-#     return res
+    return res
 
-# def bubble_sort(x):
-#     for _ in range(len(x)):
-#         for i in range(len(x)-1):
-#             if x[i] >= x[i+1] :
-#                 x[i], x[i+1] = x[i+1], x[i]
+def bubble_sort(x):
+    for _ in range(len(x)):
+        for i in range(len(x)-1):
+            if x[i] >= x[i+1] :
+                x[i], x[i+1] = x[i+1], x[i]
     
-#     return x
+    return x
 
 n = int(input())
 num_list = []
