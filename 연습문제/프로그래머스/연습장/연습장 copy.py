@@ -1,11 +1,10 @@
-new_id = 'a'
+a = [1, 2, 3, 4, 1,7]
+b = []
 
+print(a.pop(a.index(min(a))))
+print(a)
 
-if len(new_id) <= 2 :
-    n = 0
-    while len(new_id) < 3 :
-        new_id = new_id + new_id[-1]
-        print(len(new_id))
-        n += 1
-print(new_id)
-
+# for i in range(len(a)):
+#     b.append(min(a))
+#     a.pop('%d')
+#     print(b)
