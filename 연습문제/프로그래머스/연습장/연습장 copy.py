@@ -8,3 +8,4 @@ print(a)
 #     b.append(min(a))
 #     a.pop('%d')
 #     print(b)
+# 33
