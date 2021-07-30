@@ -6,8 +6,8 @@ class C_Que:
         self.b_idx = 0
 
     def enQueue(self, num):
-        if self.f_idx > 0 :
-            self.
+        print(self.f_idx)
+        
         
         self.array.append(int(num))
         self.b_idx += 1
