@@ -1,3 +1,2 @@
 #practice
 
-연습
