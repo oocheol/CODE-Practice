@@ -2,6 +2,7 @@ import os, sys, ctypes
 import win32com.client
 import pandas as pd
 from datetime import datetime
+from slacker import Slacker
 import time, calendar
 import requests
 import json
@@ -279,9 +280,11 @@ def replay_count():
 
 if __name__ == '__main__': 
     try:
-        symbol_list = ['A139270', 'A139290', 'A227550', 'A227540', 'A305540']
+        symbol_list = ['A139270', 'A139290', 'A227550', 'A227540', 'A305540', 
+                        'A217780', 'A394670', 'A130680', 'A139310', 'A160580', 
+                        'A160580', 'A394660', 'A380180', 'A276000', 'A138520']
         bought_list = []     # 매수 완료된 종목 리스트
-        target_buy_count = 2-replay_count()     # 매수할 종목 수
+        target_buy_count = 3-replay_count()     # 매수할 종목 수
         buy_percent = 1/target_buy_count # 종목당 구매 비율(ex. 3개 -> 33%씩 구매)
         printlog('check_creon_system() :', check_creon_system())  # 크레온 접속 점검
         stocks = get_stock_balance('ALL')      # 보유한 모든 종목 조회
