@@ -1,4 +1,5 @@
-# 큐 추가문제(2) - 회전하는 큐
+# 큐 추가문제(2) - 회전하는 큐 - deque
+# deque - ratate 활용 !
 
 n, m = map(int, input().split())
 x = list(map(int,input().split()))
@@ -31,8 +32,6 @@ for i in range(len(x)-1):
                b_idx +=1
                if a.index(x[i]) == 0 :
                    a.pop(0)
-                   print(a)
-                   break
                    print(a)
                    break
     
