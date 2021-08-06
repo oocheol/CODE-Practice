@@ -8,7 +8,7 @@ a = [z for z in range(1, n+1)]
 print(a)
 # x = [d, e, f]
 
-f_idx = 0
+f_idx = 0   
 b_idx = 0
 
 for i in range(len(x)-1):
