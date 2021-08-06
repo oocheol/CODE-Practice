@@ -34,12 +34,11 @@ for i in range(len(x)-1):
                    a.pop(0)
                    print(a)
                    break
-                   print(a)
-                   break
     
     if i == len(x)-2 :
         if a.index(x[i+1]) == 0 :
             a.pop(0)
+            print(a)
 
         elif a.index(x[i+1]) < len(a)/2:
             while True:
@@ -61,4 +60,5 @@ for i in range(len(x)-1):
 
 print("f_idx :", f_idx)
 print("b_idx :", b_idx)
-print(a)
+print("final : ", a)
+print("output : ", f_idx+ b_idx)
