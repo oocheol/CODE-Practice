@@ -21,7 +21,7 @@ for i in range(len(x)-1):
             
     elif a.index(x[i]) <= a.index(x[i+1]) :
             while True:
-                a.append(a.popleft())
+                a.rotate(-1)
                 f_idx += 1
                 if a.index(x[i]) == 0 :
                     a.popleft()
@@ -30,7 +30,7 @@ for i in range(len(x)-1):
                 
     elif a.index(x[i]) > a.index(x[i+1]) :
            while True:
-               a.appendleft(a.pop())
+               a.rotate(1)
                b_idx +=1
                if a.index(x[i]) == 0 :
                    a.popleft()
@@ -44,7 +44,7 @@ for i in range(len(x)-1):
 
         elif a.index(x[i+1]) < len(a)/2:
             while True:
-                a.append(a.popleft())
+                a.rotate(-1)
                 f_idx += 1
                 if a.index(x[i+1]) == 0 :
                     a.popleft()
@@ -53,7 +53,7 @@ for i in range(len(x)-1):
 
         else:
             while True:
-               a.appendleft(a.pop())
+               a.rotate(1)
                b_idx +=1
                if a.index(x[i+1]) == 0 :
                    a.popleft()
