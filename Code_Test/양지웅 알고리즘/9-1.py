@@ -1,4 +1,5 @@
 # 큐 추가문제(2) - 회전하는 큐
+# list
 
 n, m = map(int, input().split())
 x = list(map(int,input().split()))
