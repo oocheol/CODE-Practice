@@ -8,7 +8,6 @@ x = list(map(int,input().split()))
 
 a = deque(z for z in range(1, n+1))
 print(a)
-# x = [d, e, f]
 
 f_idx = 0
 b_idx = 0
