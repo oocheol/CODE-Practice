@@ -6,7 +6,7 @@ def insertion_sort(num_list):
     for idx in range(1, len(bef_n_list)):
         print(f"{idx}번째 : {bef_n_list}")
 
-        # # 1)
+        # 1)
         # now_idx = idx
 
         # while now_idx > 0 and bef_n_list[now_idx] < bef_n_list[now_idx-1]:
@@ -87,7 +87,7 @@ def bubble_sort(num_list):
     
     # ...
 
-    # # 1)
+    # 1)
     # for i in range(len(bef_n_list)):
     #     for j in range(len(bef_n_list)-i-1):
     #         if bef_n_list[j] > bef_n_list[j+1]:
