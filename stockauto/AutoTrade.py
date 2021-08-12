@@ -14,7 +14,7 @@ def post_message(message):
     with open(app_info_file, 'r') as f:
         app_info = json.load(f)
 
-    t = app_info['creon']['token'].encode('utf-8').decode('utf-8')
+    t = app_info['creon']['token'].encode('utf-8').decode('utf-8') # token 암호화
     channel = '#stock'
     token = t
 
@@ -222,7 +222,7 @@ def buy_etf(code):
                 
             if bought_qty <= stock_qty :
                 bought_list.append(code)
-                printlog('이미 {}개 주문하였습다.'.format(bought_qty))
+                printlog('이미 {}개 주문하였습니다.'.format(bought_qty))
                 
     except Exception as ex:
         post_message("`buy_etf("+ str(code) + ") -> exception! " + str(ex) + "`")
