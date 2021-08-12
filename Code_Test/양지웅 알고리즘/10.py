@@ -7,11 +7,6 @@
 
 whole_num = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-
-# x = 10
-# print(divmod(x, 2))
-# print(list(whole_num))
-
 n, m = input().split()
 def change_num(input_num, num):
     res = []    
@@ -21,14 +16,7 @@ def change_num(input_num, num):
     for x in temp_list:
         res.append(whole_num.index(x))
     for idx, y in enumerate(res):
-        result += num ** idx * y
+        result += int(num) ** idx * y
     return result
-    # divmod(x, num)
-change_num(n, m)
-
-
-# a = input().split()
-# print(list(a))
-# b = ['zzz']
-# print(list(b[0]))
-
+    
+print(change_num(n, m))
