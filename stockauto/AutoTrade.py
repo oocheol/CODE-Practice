@@ -6,6 +6,7 @@ from slacker import Slacker
 import time, calendar
 import requests
 import json
+import random
 
 
 def post_message(message):
@@ -15,7 +16,7 @@ def post_message(message):
 
     t = app_info['creon']['token'].encode('utf-8').decode('utf-8')
     channel = '#stock'
-    token = f'"{t}"'
+    token = t
 
     response = requests.post("https://slack.com/api/chat.postMessage",
         headers={"Authorization": "Bearer "+token},
@@ -218,9 +219,11 @@ def buy_etf(code):
                 bought_list.append(code)
                 post_message("`buy_etf("+ str(stock_name) + ' : ' + str(code) + 
                     ") -> " + str(bought_qty) + "EA bought!" + "`")
+                
             if bought_qty <= stock_qty :
                 bought_list.append(code)
-                printlog('이미 주문한 내역입니다.')
+                printlog('이미 {}개 주문하였습다.'.format(bought_qty))
+                
     except Exception as ex:
         post_message("`buy_etf("+ str(code) + ") -> exception! " + str(ex) + "`")
 
@@ -271,21 +274,20 @@ def replay_count():
     stocks1 = []
     for i in range(cpBalance.GetHeaderValue(7)):
         stock1_code = cpBalance.GetDataValue(12, i)  # 종목코드
-        stock1_name = cpBalance.GetDataValue(0, i)   # 종목명
-        stock1_qty = cpBalance.GetDataValue(15, i)   # 수량
-        stocks1.append({'code': stock1_code, 'name': stock1_name, 
-                'qty': stock1_qty})
+        stocks1.append({'code': stock1_code})
         
     return len(stocks1)
+
 
 if __name__ == '__main__': 
     try:
         symbol_list = ['A139270', 'A139290', 'A227550', 'A227540', 'A305540', 
                         'A217780', 'A394670', 'A130680', 'A139310', 'A160580', 
-                        'A160580', 'A394660', 'A380180', 'A276000', 'A138520']
+                        'A160580', 'A394660', 'A276000', 'A138520']
         bought_list = []     # 매수 완료된 종목 리스트
-        target_buy_count = 3-replay_count()     # 매수할 종목 수
-        buy_percent = 1/target_buy_count # 종목당 구매 비율(ex. 3개 -> 33%씩 구매)
+        target_buy_count = 4     # 매수할 종목 수
+        # target_cnt = (target_buy_count-replay_count()) # 매수 종목 수 - 기존 구매 종목 수
+        buy_percent = 0.45 # 종목당 구매 비율(ex. 3개 -> 33%씩 구매)
         printlog('check_creon_system() :', check_creon_system())  # 크레온 접속 점검
         stocks = get_stock_balance('ALL')      # 보유한 모든 종목 조회
         total_cash = int(get_current_cash())   # 100% 증거금 주문 가능 금액 조회
@@ -310,6 +312,7 @@ if __name__ == '__main__':
                 soldout = True
                 sell_all()
             if t_start < t_now < t_sell :  # AM 09:05 ~ PM 03:15 : 매수
+                random.shuffle(symbol_list) # 종목 list shuffle
                 for sym in symbol_list:
                     if len(bought_list) < target_buy_count:
                         buy_etf(sym)
