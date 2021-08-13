@@ -11,15 +11,15 @@ n, m = map(int, input().split())
 def change_num(input_num, num):
     temp = []
     
-    while input_num > num:
-        if input_num // num == 0 :
-            temp.append(whole_num[input_num])    
-            print(temp)
+    while input_num > num:        
         temp.append(whole_num[input_num % num])
         input_num = input_num // num
-        print(temp)
 
-    return temp        
+        if input_num < num :
+            temp.append(whole_num[input_num])    
     
-    
+    temp.reverse()
+
+    return temp
+        
 print(change_num(n, m))
