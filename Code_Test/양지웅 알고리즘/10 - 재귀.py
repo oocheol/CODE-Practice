@@ -9,8 +9,18 @@
 whole_num = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 n, m = input().split()
+length = len(n)
 
-def recursion(x, y):
-    n = 0
-    res = []
+def recursion(x, len):
+    idx = 0
+    temp_list = list(x)
+    temp_list.reverse()
+
+    if len == 0 :
+        return 
+    
+    temp_list[len]
+    
+    
+
     
