@@ -19,7 +19,8 @@ def change_num(input_num, num):
             temp.append(whole_num[input_num])    
     
     temp.reverse()
+    res = "".join(temp)
+    
+    return res
 
-    return temp
-        
 print(change_num(n, m))
