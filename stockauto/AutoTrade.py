@@ -219,19 +219,11 @@ def buy_etf(code):
                 bought_list.append(code)
                 post_message("`buy_etf("+ str(stock_name) + ' : ' + str(code) + 
                     ") -> " + str(bought_qty) + "EA bought!" + "`")
-                for sym in symbol_list:
-                    if len(bought_list) < target_buy_count:
-                        buy_etf(sym)
-                        time.sleep(1)
                         
             if bought_qty <= stock_qty :
                 bought_list.append(code)
                 printlog('이미 {}개 주문하였습니다.'.format(bought_qty))
-                for sym in symbol_list:
-                    if len(bought_list) < target_buy_count:
-                        buy_etf(sym)
-                        time.sleep(1)
-                
+
     except Exception as ex:
         post_message("`buy_etf("+ str(code) + ") -> exception! " + str(ex) + "`")
 
