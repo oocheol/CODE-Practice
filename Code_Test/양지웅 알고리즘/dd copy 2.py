@@ -1,19 +1,3 @@
-#practice
-
-from numpy import dot
-from numpy.linalg import norm
-import numpy as np
-def cos_sim(A, B):
-       return dot(A, B)/(norm(A)*norm(B))
-
-
-doc1=[1, 10]
-doc2=[2, 20]
-doc3=[3, 30]
-
-print(cos_sim(doc1, doc2)) #문서1과 문서2의 코사인 유사도
-print(cos_sim(doc1, doc3)) #문서1과 문서3의 코사인 유사도
-print(cos_sim(doc2, doc3)) #문서2과 문서3의 코사인 유사도
 #값 입력
 N = int(input())
 array = []
