@@ -285,9 +285,9 @@ if __name__ == '__main__':
                         'A217780', 'A394670', 'A130680', 'A139310', 'A160580', 
                         'A160580', 'A394660', 'A276000', 'A138520']
         bought_list = []     # 매수 완료된 종목 리스트
-        target_buy_count = 4     # 매수할 종목 수
+        target_buy_count = 2     # 매수할 종목 수
         # target_cnt = (target_buy_count-replay_count()) # 매수 종목 수 - 기존 구매 종목 수
-        buy_percent = 0.999 # 종목당 구매 비율(ex. 3개 -> 33%씩 구매)
+        buy_percent = 0.49 # 종목당 구매 비율(ex. 3개 -> 33%씩 구매)
         printlog('check_creon_system() :', check_creon_system())  # 크레온 접속 점검
         stocks = get_stock_balance('ALL')      # 보유한 모든 종목 조회
         total_cash = int(get_current_cash())   # 100% 증거금 주문 가능 금액 조회
