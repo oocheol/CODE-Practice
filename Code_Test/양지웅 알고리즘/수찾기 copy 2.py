@@ -22,6 +22,7 @@
 
 def binary_search(start, end, target, number_list):
     mid  = (start + end) // 2
+    
     if start > end:
         return 0
 
@@ -41,4 +42,4 @@ m = int(input("m : "))
 M = list(map(int, input().split()))
 
 for i in range(len(M)):
-    print(binary_search(0, len(N)-1, M[i],Sort_N))
+    print(binary_search(0, len(N)-1, M[i], Sort_N))
