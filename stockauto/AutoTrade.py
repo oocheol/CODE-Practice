@@ -188,6 +188,7 @@ def buy_etf(code):
         #    len(bought_list), 'target_buy_count:', target_buy_count)     
         if current_price > target_price and current_price > ma5_price \
             and current_price > ma10_price:  
+            time.sleep(2)
             printlog(stock_name + '(' + str(code) + ') ' + str(buy_qty) +
                 'EA : ' + str(current_price) + ' meets the buy condition!`')            
             cpTradeUtil.TradeInit()
