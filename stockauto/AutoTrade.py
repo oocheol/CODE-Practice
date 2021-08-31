@@ -233,11 +233,6 @@ def buy_etf(code):
     except Exception as ex:
         post_message("`buy_etf("+ str(code) + ") -> exception! " + str(ex) + "`")
 
-rqStatus = cpOrder.GetDibStatus()
-errMsg = cpOrder.GetDibMsg1()
-if rqStatus != 0:
-    print("주문 실패: ", rqStatus, errMsg)
-    exit()
 
 def sell_all():
     """보유한 모든 종목을 최유리 지정가 IOC 조건으로 매도한다."""
