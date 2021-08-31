@@ -28,3 +28,30 @@ my_origin = st.sidebar.selectbox("origin",
                 data["origin"].unique())
 
 
+# 입력된 X 데이터.
+st.header("입력된 X 데이터:")
+my_X_raw = np.array([[my_cylinders,my_displacement,my_horsepower,my_weight, my_acceleration, my_model_year]])
+my_df_X_raw = pd.DataFrame(data=my_X_raw)
+st.write(my_df_X_raw)
+
+
+# 전처리된 X 데이터.
+with open("../data/my_scaler.pkl","rb") as f:
+    my_scaler = pickle.load(f)
+my_X_scaled = my_scaler.transform(my_X_raw)     # fit_transform이 아닌 transform!!
+
+st.header("전처리된 X 데이터:")
+my_df_X_scaled = pd.DataFrame(data=my_X_scaled)
+st.write(my_df_X_scaled)
+
+# 예측.
+with open("../data/my_regressor.pkl","rb") as f:
+    my_classifier = pickle.load(f)
+
+my_proba = my_classifier.predict_proba(my_X_scaled)
+my_Y_pred = y_labels[my_classifier.predict(my_X_scaled)[0]]
+
+st.header("예측 결과:")
+my_proba_df = pd.DataFrame(data=my_proba)
+st.write("유형별 예측 확률:  ", my_proba_df)
+st.write("가장 유력한 유형:  ", my_Y_pred)
