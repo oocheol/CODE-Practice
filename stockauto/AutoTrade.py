@@ -205,12 +205,19 @@ def buy_etf(code):
             # 매수 주문 요청
             ret = cpOrder.BlockRequest() 
             printlog('최유리 FOK 매수 ->', stock_name, code, buy_qty, '->', ret)
+            rqStatus = cpOrder.GetDibStatus()
+            errMsg = cpOrder.GetDibMsg1()
             if ret == 4:
                 remain_time = cpStatus.LimitRequestRemainTime
                 printlog('주의: 연속 주문 제한에 걸림. 대기 시간:', remain_time/1000)
                 time.sleep(remain_time/1000) 
                 return False
             time.sleep(2)
+
+            if rqStatus != 0:   # 주문실패
+                print("주문 실패: ", rqStatus, errMsg)
+                exit()
+
             printlog('현금주문 가능금액 :', buy_amount)
             stock_name, bought_qty = get_stock_balance(code)
             printlog('get_stock_balance :', stock_name, stock_qty)
@@ -225,6 +232,12 @@ def buy_etf(code):
 
     except Exception as ex:
         post_message("`buy_etf("+ str(code) + ") -> exception! " + str(ex) + "`")
+
+rqStatus = cpOrder.GetDibStatus()
+errMsg = cpOrder.GetDibMsg1()
+if rqStatus != 0:
+    print("주문 실패: ", rqStatus, errMsg)
+    exit()
 
 def sell_all():
     """보유한 모든 종목을 최유리 지정가 IOC 조건으로 매도한다."""
