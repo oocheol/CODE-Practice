@@ -216,7 +216,7 @@ def buy_etf(code):
 
             if rqStatus != 0:   # 주문실패
                 print("주문 실패: ", rqStatus, errMsg)
-                exit()
+                return False
 
             printlog('현금주문 가능금액 :', buy_amount)
             stock_name, bought_qty = get_stock_balance(code)
