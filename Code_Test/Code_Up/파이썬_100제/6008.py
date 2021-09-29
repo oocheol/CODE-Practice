@@ -11,4 +11,4 @@
 
 # 그렇다면 \n을 화면에 그대로 출력하려면 어떻게 해야될까?
 
-print("print(\"Hello\nWorld\")")
+print("print(\"Hello\\nWorld\")")
