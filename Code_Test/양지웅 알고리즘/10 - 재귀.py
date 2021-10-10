@@ -12,15 +12,21 @@ n, m = input().split()
 length = len(n)
 
 def recursion(x, len):
+    res = []
     idx = 0
+    result = 0
     temp_list = list(x)
     temp_list.reverse()
 
     if len == 0 :
         return 
+    res.append(whole_num.index(idx))
+    result += int(m) ** idx * res[idx]
+    idx += 1
+    recursion(x, len)
     
     temp_list[len]
-    
+
     
 
     
